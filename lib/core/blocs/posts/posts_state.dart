@@ -25,6 +25,10 @@ class PostsLoadingSuccess extends PostsState {
 }
 
 class PostsLoadingError extends PostsState {
+  final Exception error;
+
+  PostsLoadingError(this.error);
+
   @override
-  String toString() => 'PostsLoadingError ';
+  String toString() => 'PostsLoadingError { error : $error }';
 }

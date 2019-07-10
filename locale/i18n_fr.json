@@ -1,3 +1,5 @@
 {
-  "app_title": "Super titre"
+  "app_title": "Super titre",
+  "network_error_title": "Aucun réseau",
+  "retry": "Réessayer"
 }

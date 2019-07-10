@@ -1,7 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_model/core/blocs/posts/bloc.dart';
-import 'package:flutter_model/core/models/navigation_arguments/post_detail_arguments.dart';
+import 'package:flutter_model/core/models/navigation/arguments/post_detail_arguments.dart';
 import 'package:flutter_model/core/models/post.dart';
 import 'package:flutter_model/ui/post_detail/post_detail.dart';
 import 'package:flutter_model/ui/shared/shared.dart';
@@ -32,10 +34,20 @@ class PostsList extends StatelessWidget {
                 );
               },
             );
-          } else {
+          } else if (state is PostsLoadingError) {
+            final error = state.error;
+            if (error is SocketException) {
+              return Center(
+                child: NoNetwork(
+                  onRetry: () => BlocProvider.of<PostsBloc>(context).dispatch(RetrievePosts()),
+                ),
+              );
+            }
             return Center(
-              child: Text("Error"),
+              child: Text("Server error"),
             );
+          } else {
+            return Container();
           }
         },
       ),

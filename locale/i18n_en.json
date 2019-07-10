@@ -1,3 +1,5 @@
 {
-  "app_title": "Awesome title"
+  "app_title": "Awesome title",
+  "network_error_title": "Network error",
+  "retry": "Retry"
 }

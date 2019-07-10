@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_model/core/blocs/favorites/bloc.dart';
-import 'package:flutter_model/core/models/navigation_arguments/post_detail_arguments.dart';
+import 'package:flutter_model/core/models/navigation/arguments/post_detail_arguments.dart';
 import 'package:flutter_model/core/models/post.dart';
 import 'package:flutter_model/ui/post_detail/post_detail.dart';
 import 'package:flutter_model/ui/shared/shared.dart';

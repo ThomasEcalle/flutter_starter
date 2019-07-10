@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_model/core/models/navigation/exceptions/exceptions.dart';
 import 'package:flutter_model/core/models/post.dart';
 import 'package:http/http.dart' as http;
 
@@ -9,7 +10,7 @@ class ApiServices {
   static Future<List<Post>> getAllPosts() async {
     final response = await http.get("$BASE_URL/posts");
     if (response.statusCode != 200) {
-      throw Error();
+      throw ServerError();
     }
 
     final jsonBody = json.decode(response.body);
