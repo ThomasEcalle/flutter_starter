@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_model/core/translations.dart';
 import 'package:flutter_model/ui/favorites/favorites.dart';
 import 'package:flutter_model/ui/posts_list/posts_list.dart';
 
@@ -21,7 +22,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Model App"),
+        title: Text(Translations.of(context).text("app_title")),
       ),
       body: tabs[_index],
       bottomNavigationBar: BottomNavigationBar(

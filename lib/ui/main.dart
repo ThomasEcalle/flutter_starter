@@ -1,11 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_model/core/blocs/favorites/bloc.dart';
 import 'package:flutter_model/core/blocs/posts/bloc.dart';
-import 'package:flutter_model/core/models/navigation_arguments/post_detail_arguments.dart';
+import 'package:flutter_model/core/translations.dart';
 import 'package:flutter_model/ui/home.dart';
-import 'package:flutter_model/ui/post_detail/post_detail.dart';
+import 'package:flutter_model/ui/router.dart';
 
 class SimpleBlocDelegate extends BlocDelegate {
   @override
@@ -41,26 +42,21 @@ class MyApp extends StatelessWidget {
         BlocProvider<FavoritesBloc>(builder: (BuildContext context) => FavoritesBloc()),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
         theme: ThemeData(
             primarySwatch: Colors.blue,
             textTheme: TextTheme(
                 display1: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
                 display2: TextStyle(color: Colors.grey, fontSize: 14))),
-        onGenerateRoute: (RouteSettings routeSettings) {
-          final dynamicArguments = routeSettings.arguments;
-          switch (routeSettings.name) {
-            case PostDetail.routeName:
-              if (dynamicArguments is PostDetailArguments) {
-                return MaterialPageRoute(builder: (BuildContext context) {
-                  return PostDetail(
-                    post: dynamicArguments.post,
-                  );
-                });
-              }
-              break;
-          }
-        },
+        localizationsDelegates: [
+          const TranslationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('en', ''),
+          const Locale('fr', ''),
+        ],
+        onGenerateRoute: Router.generateRoute,
         home: Home(),
       ),
     );
