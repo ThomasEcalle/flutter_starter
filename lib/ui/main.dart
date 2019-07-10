@@ -1,9 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_model/core/blocs/favorites/favorites_bloc.dart';
-import 'package:flutter_model/core/blocs/posts/posts_bloc.dart';
-import 'package:flutter_model/core/blocs/posts/posts_event.dart';
+import 'package:flutter_model/core/blocs/favorites/bloc.dart';
+import 'package:flutter_model/core/blocs/posts/bloc.dart';
 import 'package:flutter_model/core/models/navigation_arguments/post_detail_arguments.dart';
 import 'package:flutter_model/ui/home.dart';
 import 'package:flutter_model/ui/post_detail/post_detail.dart';
