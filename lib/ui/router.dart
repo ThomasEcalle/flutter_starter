@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_model/core/models/navigation/arguments/post_detail_arguments.dart';
-import 'package:flutter_model/ui/post_detail/post_detail.dart';
+
+import 'authenticated/post_detail/post_detail.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {

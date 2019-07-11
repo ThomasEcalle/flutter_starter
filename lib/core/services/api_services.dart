@@ -19,4 +19,24 @@ class ApiServices {
 
     return posts;
   }
+
+  static Future<bool> hasToken() async {
+    await Future.delayed(Duration(seconds: 3));
+    return false;
+  }
+
+  static Future<bool> persistToken(String token) async {
+    await Future.delayed(Duration(seconds: 1));
+    return false;
+  }
+
+  static Future<void> clearTokens() async {
+    await Future.delayed(Duration(seconds: 1));
+    return;
+  }
+
+  static Future<String> login(String userName, String password) async {
+    await Future.delayed(Duration(seconds: 1));
+    return "token";
+  }
 }

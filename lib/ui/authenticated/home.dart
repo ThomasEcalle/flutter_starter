@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_model/core/blocs/posts/posts_bloc.dart';
+import 'package:flutter_model/core/blocs/posts/posts_event.dart';
 import 'package:flutter_model/core/translations.dart';
-import 'package:flutter_model/ui/favorites/favorites.dart';
-import 'package:flutter_model/ui/posts_list/posts_list.dart';
+
+import 'favorites/favorites.dart';
+import 'posts_list/posts_list.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -24,7 +28,10 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text(Translations.of(context).text("app_title")),
       ),
-      body: tabs[_index],
+      body: BlocProvider(
+        builder: (BuildContext context) => PostsBloc()..dispatch(RetrievePosts()),
+        child: tabs[_index],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _index,
         items: <BottomNavigationBarItem>[

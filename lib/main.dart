@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_model/core/blocs/authentication/authentication_bloc.dart';
 import 'package:flutter_model/core/blocs/favorites/bloc.dart';
-import 'package:flutter_model/core/blocs/posts/bloc.dart';
 import 'package:flutter_model/core/translations.dart';
-import 'package:flutter_model/ui/home.dart';
+import 'package:flutter_model/ui/authentication.dart';
 import 'package:flutter_model/ui/router.dart';
 
 class SimpleBlocDelegate extends BlocDelegate {
@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<PostsBloc>(builder: (BuildContext context) => PostsBloc()..dispatch(RetrievePosts())),
         BlocProvider<FavoritesBloc>(builder: (BuildContext context) => FavoritesBloc()),
+        BlocProvider<AuthenticationBloc>(builder: (BuildContext context) => AuthenticationBloc()),
       ],
       child: MaterialApp(
         theme: ThemeData(
@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
           const Locale('fr', ''),
         ],
         onGenerateRoute: Router.generateRoute,
-        home: Home(),
+        home: Authentication(),
       ),
     );
   }
