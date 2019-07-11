@@ -15,6 +15,15 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
         yield PostsLoadingError(error);
       }
     }
+
+    if (event is RefreshPosts) {
+      try {
+        final posts = await ApiServices.getAllPosts();
+        yield RefreshSuccess(posts: posts);
+      } catch (error) {
+        yield PostsLoadingError(error);
+      }
+    }
   }
 
   @override
