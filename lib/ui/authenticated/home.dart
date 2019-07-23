@@ -29,14 +29,20 @@ class _HomeState extends State<Home> {
         title: Text(Translations.of(context).text("app_title")),
       ),
       body: BlocProvider(
-        builder: (BuildContext context) => PostsBloc()..dispatch(RetrievePosts()),
-        child: tabs[_index],
+        builder: (BuildContext context) =>
+            PostsBloc()..dispatch(RetrievePosts()),
+        child: IndexedStack(
+          index: _index,
+          children: tabs,
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _index,
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Container(height: 0.0)),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), title: Container(height: 0.0)),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home), title: Container(height: 0.0)),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.favorite), title: Container(height: 0.0)),
         ],
         onTap: (index) => _onBottomBarSwitch(index),
       ),
