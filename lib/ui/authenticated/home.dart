@@ -26,11 +26,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Translations.of(context).text("app_title")),
+        title: Text(I18n.appTitle(context)),
       ),
       body: BlocProvider(
-        builder: (BuildContext context) =>
-            PostsBloc()..dispatch(RetrievePosts()),
+        builder: (BuildContext context) => PostsBloc()..dispatch(RetrievePosts()),
         child: IndexedStack(
           index: _index,
           children: tabs,
@@ -39,10 +38,8 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _index,
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home), title: Container(height: 0.0)),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite), title: Container(height: 0.0)),
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Container(height: 0.0)),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), title: Container(height: 0.0)),
         ],
         onTap: (index) => _onBottomBarSwitch(index),
       ),

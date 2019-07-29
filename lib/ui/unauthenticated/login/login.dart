@@ -10,7 +10,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Translations.of(context).text("app_title")),
+        title: Text(I18n.appTitle(context)),
       ),
       body: SafeArea(
         child: BlocProvider(
@@ -46,14 +46,14 @@ class LoginScreen extends StatelessWidget {
               TextField(
                 controller: emailController,
                 decoration: InputDecoration(
-                  hintText: Translations.of(context).text("email_hint"),
+                  hintText: I18n.emailHint(context),
                 ),
               ),
               TextField(
                 controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
-                  hintText: Translations.of(context).text("password_hint"),
+                  hintText: I18n.passwordHint(context),
                 ),
               ),
               RaisedButton(

@@ -12,9 +12,9 @@ class NoNetwork extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Text(Translations.of(context).text("network_error_title")),
+        Text(I18n.networkErrorTitle(context)),
         RaisedButton(
-          child: Text(Translations.of(context).text("retry")),
+          child: Text(I18n.retry(context)),
           onPressed: () {
             if (this.onRetry != null) {
               this.onRetry();

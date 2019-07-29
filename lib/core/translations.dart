@@ -4,17 +4,30 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-class Translations {
-  Translations(Locale locale) {
+class I18n {
+  // CORE
+  static String appTitle(BuildContext context) => _text("app_title", context);
+
+  static String networkErrorTitle(BuildContext context) => _text("network_error_title", context);
+
+  static String retry(BuildContext context) => _text("retry", context);
+
+  static String emailHint(BuildContext context) => _text("email_hint", context);
+
+  static String passwordHint(BuildContext context) => _text("password_hint", context);
+
+  static String _text(String key, BuildContext context) => Localizations.of<I18n>(context, I18n).text(key);
+
+  I18n(Locale locale) {
     this.locale = locale;
     _localizedValues = null;
   }
 
   Locale locale;
-  static Map<dynamic, dynamic> _localizedValues;
+  static Map<String, dynamic> _localizedValues;
 
-  static Translations of(BuildContext context) {
-    return Localizations.of<Translations>(context, Translations);
+  static I18n of(BuildContext context) {
+    return Localizations.of<I18n>(context, I18n);
   }
 
   String text(String key) {
@@ -29,8 +42,8 @@ class Translations {
     return array;
   }
 
-  static Future<Translations> load(Locale locale) async {
-    Translations translations = new Translations(locale);
+  static Future<I18n> load(Locale locale) async {
+    I18n translations = new I18n(locale);
     String jsonContent = await rootBundle.loadString("locale/i18n_${locale.languageCode}.json");
     _localizedValues = json.decode(jsonContent);
     return translations;
@@ -39,14 +52,14 @@ class Translations {
   get currentLanguage => locale.languageCode;
 }
 
-class TranslationsDelegate extends LocalizationsDelegate<Translations> {
+class TranslationsDelegate extends LocalizationsDelegate<I18n> {
   const TranslationsDelegate();
 
   @override
   bool isSupported(Locale locale) => ['en', 'fr'].contains(locale.languageCode);
 
   @override
-  Future<Translations> load(Locale locale) => Translations.load(locale);
+  Future<I18n> load(Locale locale) => I18n.load(locale);
 
   @override
   bool shouldReload(TranslationsDelegate old) => false;
