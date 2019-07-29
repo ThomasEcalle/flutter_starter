@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_model/core/models/post.dart';
 
+import '../app_theme.dart';
+
 class PostListItem extends StatelessWidget {
   final Post post;
   final VoidCallback onTap;
@@ -14,13 +16,13 @@ class PostListItem extends StatelessWidget {
       child: ListTile(
         title: Text(
           post.title,
-          style: Theme.of(context).textTheme.display1,
+          style: AppTheme.of(context).display1,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
         subtitle: Text(
           post.body,
-          style: Theme.of(context).textTheme.display2,
+          style: AppTheme.of(context).display2,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),

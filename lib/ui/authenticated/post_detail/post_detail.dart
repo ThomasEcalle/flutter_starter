@@ -4,6 +4,8 @@ import 'package:flutter_model/core/blocs/favorites/favorites_bloc.dart';
 import 'package:flutter_model/core/blocs/favorites/favorites_event.dart';
 import 'package:flutter_model/core/models/post.dart';
 
+import '../../app_theme.dart';
+
 class PostDetail extends StatefulWidget {
   static const String routeName = "/PostDetail";
   final Post post;
@@ -51,7 +53,7 @@ class _PostDetailState extends State<PostDetail> {
               _buildFavoriteIcon(context),
               Text(
                 widget.post.body,
-                style: Theme.of(context).textTheme.display2,
+                style: AppTheme.of(context).display2,
               )
             ],
           ),

@@ -8,6 +8,8 @@ import 'package:flutter_model/core/translations.dart';
 import 'package:flutter_model/ui/authentication.dart';
 import 'package:flutter_model/ui/router.dart';
 
+import 'ui/app_theme.dart';
+
 class SimpleBlocDelegate extends BlocDelegate {
   @override
   void onEvent(Bloc bloc, Object event) {
@@ -41,23 +43,20 @@ class MyApp extends StatelessWidget {
         BlocProvider<FavoritesBloc>(builder: (BuildContext context) => FavoritesBloc()),
         BlocProvider<AuthenticationBloc>(builder: (BuildContext context) => AuthenticationBloc()),
       ],
-      child: MaterialApp(
-        theme: ThemeData(
-            primarySwatch: Colors.blue,
-            textTheme: TextTheme(
-                display1: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
-                display2: TextStyle(color: Colors.grey, fontSize: 14))),
-        localizationsDelegates: [
-          const TranslationsDelegate(),
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-        ],
-        supportedLocales: [
-          const Locale('en', ''),
-          const Locale('fr', ''),
-        ],
-        onGenerateRoute: Router.generateRoute,
-        home: Authentication(),
+      child: AppTheme(
+        child: MaterialApp(
+          localizationsDelegates: [
+            const TranslationsDelegate(),
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: [
+            const Locale('en', ''),
+            const Locale('fr', ''),
+          ],
+          onGenerateRoute: Router.generateRoute,
+          home: Authentication(),
+        ),
       ),
     );
   }
