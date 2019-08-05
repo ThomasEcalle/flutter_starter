@@ -26,15 +26,18 @@
 .pub-cache/
 .pub/
 /build/
+pubspec.lock
 
 # Android related
-**/android/**/gradle-wrapper.jar
 **/android/.gradle
 **/android/captures/
-**/android/gradlew
-**/android/gradlew.bat
-**/android/local.properties
 **/android/**/GeneratedPluginRegistrant.java
+**/android/app/build/**
+**/android/build/**
+
+# Fastlane related
+**/fastlane/README.md
+**/fastlane/report.xml
 
 # iOS/XCode related
 **/ios/**/*.mode1v3

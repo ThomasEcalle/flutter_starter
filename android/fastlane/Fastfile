@@ -1,0 +1,18 @@
+#
+# Fastfile
+# Smartlane
+# Copyright (c) 2017 Smart&Soft. All rights reserved.
+#
+################################################################################
+
+import 'Smartfile'
+
+platform :android do
+  def before_task; end
+
+  def after_task
+    smartdistrib
+    #play_store(track: 'internal')
+  end
+
+end
