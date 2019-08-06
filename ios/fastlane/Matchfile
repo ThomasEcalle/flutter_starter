@@ -1,0 +1,10 @@
+#
+# Matchfile
+# Smartlane
+# Copyright (c) 2019 Equinoa. All rights reserved.
+#
+################################################################################
+
+git_url 'git@gitlab.cyllene.co:mobile/tools/certificates-match-ios.git'
+username 'register+apple@smartnsoft.com'
+shallow_clone true

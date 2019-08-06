@@ -1,0 +1,11 @@
+#
+# Gymfile
+# Smartlane
+# Copyright (c) 2017 Smart&Soft. All rights reserved.
+#
+################################################################################
+
+clean true
+configuration "Release"
+derived_data_path ENV['BUILD_DIR']
+output_directory ENV['BUILD_DIR']

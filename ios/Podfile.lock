@@ -1,0 +1,23 @@
+PODS:
+  - Flutter (1.0.0)
+  - Smartlane (2.4.7)
+
+DEPENDENCIES:
+  - Flutter (from `.symlinks/flutter/ios`)
+  - Smartlane (~> 2.4.7)
+
+SPEC REPOS:
+  "git@gitlab.cyllene.co:mobile/tools/SmartCocoapods.git":
+    - Smartlane
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  Smartlane: 767f2777415ec0b4305435eb0a05f7d9c36f6af1
+
+PODFILE CHECKSUM: 86bacc05d0606be3d255ff8dd18246c74e1c7cd6
+
+COCOAPODS: 1.7.5

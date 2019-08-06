@@ -1,0 +1,28 @@
+#
+# Fastfile
+# Smartlane
+# Copyright (c) 2017 Smart&Soft. All rights reserved.
+#
+################################################################################
+
+import 'Smartfile'
+
+platform :ios do
+
+  def before_beta
+    #add_badge
+    set_beta_version
+  end
+
+  def after_beta
+    smartdistrib
+  end
+
+  def before_ad_hoc; end
+
+  def after_ad_hoc; end
+
+  def before_store; end
+
+  def after_store; end
+end

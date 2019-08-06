@@ -1,0 +1,10 @@
+#
+# Pluginfile
+# Smartlane
+# Copyright (c) 2017 Smart&Soft. All rights reserved.
+#
+################################################################################
+
+gem 'fastlane-plugin-ftp'
+gem 'fastlane-plugin-badge'
+gem 'fastlane-plugin-update_provisioning_profile_specifier'
