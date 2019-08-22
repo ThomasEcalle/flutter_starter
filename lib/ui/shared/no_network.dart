@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_model/core/translations.dart';
+import 'package:flutter_model/core/translations/i18n.dart';
 
 class NoNetwork extends StatelessWidget {
   final VoidCallback onRetry;
@@ -12,9 +12,9 @@ class NoNetwork extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Text(I18n.networkErrorTitle(context)),
+        Text(I18n.of(context).networkErrorTitle),
         RaisedButton(
-          child: Text(I18n.retry(context)),
+          child: Text(I18n.of(context).retry),
           onPressed: () {
             if (this.onRetry != null) {
               this.onRetry();

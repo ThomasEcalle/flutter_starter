@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_model/core/blocs/authentication/authentication_bloc.dart';
 import 'package:flutter_model/core/blocs/favorites/bloc.dart';
-import 'package:flutter_model/core/translations.dart';
+import 'package:flutter_model/core/translations/i18n.dart';
 import 'package:flutter_model/ui/authentication.dart';
 import 'package:flutter_model/ui/router.dart';
 
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
       child: AppTheme(
         child: MaterialApp(
           localizationsDelegates: [
-            const TranslationsDelegate(),
+            const I18nDelegate(),
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
           ],
