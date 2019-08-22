@@ -3,14 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_model/core/blocs/authentication/authentication_bloc.dart';
 import 'package:flutter_model/core/blocs/login/bloc.dart';
 import 'package:flutter_model/core/blocs/login/login_bloc.dart';
-import 'package:flutter_model/core/translations.dart';
+import 'package:flutter_model/core/translations/i18n.dart';
 
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(I18n.appTitle(context)),
+        title: Text(I18n.of(context).appTitle(title: I18n.of(context).title, versionNumber: 1)),
       ),
       body: SafeArea(
         child: BlocProvider(
@@ -46,14 +46,14 @@ class LoginScreen extends StatelessWidget {
               TextField(
                 controller: emailController,
                 decoration: InputDecoration(
-                  hintText: I18n.emailHint(context),
+                  hintText: I18n.of(context).emailHint,
                 ),
               ),
               TextField(
                 controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
-                  hintText: I18n.passwordHint(context),
+                  hintText: I18n.of(context).passwordHint,
                 ),
               ),
               RaisedButton(

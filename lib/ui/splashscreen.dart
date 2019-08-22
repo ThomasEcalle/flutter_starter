@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_model/core/translations.dart';
+import 'package:flutter_model/core/translations/i18n.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
       body: Container(
         color: Theme.of(context).primaryColor,
         child: Center(
-          child: Text(I18n.appTitle(context)),
+          child: Text(I18n.of(context).appTitle(title: I18n.of(context).title, versionNumber: 1)),
         ),
       ),
     );
