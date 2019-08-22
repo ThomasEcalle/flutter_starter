@@ -53,7 +53,7 @@ class _PostDetailState extends State<PostDetail> {
               _buildFavoriteIcon(context),
               Text(
                 widget.post.body,
-                style: AppTheme.of(context).display2,
+                style: AppTheme.of(context).textStyles.display2,
               )
             ],
           ),

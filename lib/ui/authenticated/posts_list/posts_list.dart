@@ -10,7 +10,7 @@ import 'package:flutter_model/ui/authenticated/post_detail/post_detail.dart';
 import 'package:flutter_model/ui/shared/shared.dart';
 
 class PostsList extends StatelessWidget {
-  Completer<void> _refreshCompleter = Completer<void>();
+  final Completer<void> _refreshCompleter = Completer<void>();
 
   _navigateToDetail(Post post, BuildContext context) {
     Navigator.of(context).pushNamed(PostDetail.routeName, arguments: PostDetailArguments(post));

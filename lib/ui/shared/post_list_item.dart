@@ -16,13 +16,13 @@ class PostListItem extends StatelessWidget {
       child: ListTile(
         title: Text(
           post.title,
-          style: AppTheme.of(context).display1,
+          style: AppTheme.of(context).textStyles.display1,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
         subtitle: Text(
           post.body,
-          style: AppTheme.of(context).display2,
+          style: AppTheme.of(context).textStyles.display2,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),

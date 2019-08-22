@@ -44,6 +44,7 @@ class Favorites extends StatelessWidget {
                 );
               }
             }
+            return Container(); // Should not happen
           },
         ),
       ),
