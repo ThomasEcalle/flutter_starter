@@ -10,7 +10,10 @@ class PostDetail extends StatefulWidget {
   static const String routeName = "/PostDetail";
   final Post post;
 
-  const PostDetail({Key key, this.post}) : super(key: key);
+  const PostDetail({
+    Key key,
+    this.post,
+  }) : super(key: key);
 
   @override
   _PostDetailState createState() => _PostDetailState();
@@ -53,7 +56,7 @@ class _PostDetailState extends State<PostDetail> {
               _buildFavoriteIcon(context),
               Text(
                 widget.post.body,
-                style: AppTheme.of(context).display2,
+                style: AppTheme.of(context).textStyles.display2,
               )
             ],
           ),
