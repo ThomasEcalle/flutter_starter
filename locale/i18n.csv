@@ -1,0 +1,7 @@
+keys,fr,en
+appTitle,"Super ""titre"" : %title$s v %versionNumber$d","Awesome ""title"" : %title$s v %versionNumber$d"
+networkErrorTitle,Aucun réseau,Network error
+retry,Réessayer,Retry
+emailHint,Email,
+passwordHint,Mot de passe,Password
+title,Modèle,Model
