@@ -35,6 +35,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flappy_translator: 1.0.3
+  flutter_rename_app: 1.0.0
+
+flutter_rename_app:
+  application_name: Your App Name here
+  dart_package_name: my_app
+  application_id: com.android.myapp
+  bundle_id: com.ios.myapp
+  android_package_name: com.my.app
 
 
 # For information on the generic Dart part of this file, see the
