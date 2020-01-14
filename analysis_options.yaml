@@ -6,6 +6,7 @@ analyzer:
     - "lib/core/translations/*.dart"
   strong-mode:
     implicit-casts: false
+    implicit-dynamic: false
   errors:
     invalid_use_of_protected_member: error
     always_declare_return_types: error
