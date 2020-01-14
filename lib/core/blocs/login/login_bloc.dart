@@ -26,7 +26,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         await ApiServices.persistToken(token);
         _authenticationBloc.dispatch(LoggedInEvent());
       } catch (error) {
-        yield LoginError(error);
+        if (error is Error) {
+          yield LoginError(error);
+        }
       }
     }
   }

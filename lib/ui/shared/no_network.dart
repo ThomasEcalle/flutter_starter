@@ -16,7 +16,7 @@ class NoNetwork extends StatelessWidget {
         RaisedButton(
           child: Text(I18n.of(context).retry),
           onPressed: () {
-            if (this.onRetry != null) {
+            if (onRetry != null) {
               this.onRetry();
             }
           },

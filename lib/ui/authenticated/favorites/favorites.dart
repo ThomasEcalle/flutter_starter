@@ -7,13 +7,16 @@ import 'package:flutter_model/ui/authenticated/post_detail/post_detail.dart';
 import 'package:flutter_model/ui/shared/shared.dart';
 
 class Favorites extends StatelessWidget {
-  _navigateToDetail(Post post, BuildContext context) {
-    Navigator.of(context).pushNamed(PostDetail.routeName, arguments: PostDetailArguments(post));
+  void _navigateToDetail(Post post, BuildContext context) {
+    Navigator.of(context).pushNamed(
+      PostDetail.routeName,
+      arguments: PostDetailArguments(post),
+    );
   }
 
   Widget _emptyFavoritesWidget() {
     return Center(
-      child: Text("No favorites"),
+      child: Text('No favorites'),
     );
   }
 

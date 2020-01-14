@@ -8,7 +8,12 @@ class SplashScreen extends StatelessWidget {
       body: Container(
         color: Theme.of(context).primaryColor,
         child: Center(
-          child: Text(I18n.of(context).appTitle(title: I18n.of(context).title, versionNumber: 1)),
+          child: Text(
+            I18n.of(context).appTitle(
+              title: I18n.of(context).title,
+              versionNumber: 1,
+            ),
+          ),
         ),
       ),
     );

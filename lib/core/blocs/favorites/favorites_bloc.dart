@@ -23,7 +23,7 @@ class FavoritesBloc extends Bloc<FavoritesEvents, FavoritesState> {
   @override
   FavoritesState get initialState => FavoritesInitialState();
 
-  isPostInFavorites(Post post) {
-    return this.favorites.contains(post);
+  bool isPostInFavorites(Post post) {
+    return favorites.contains(post);
   }
 }

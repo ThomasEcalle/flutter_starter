@@ -12,7 +12,9 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
         final posts = await ApiServices.getAllPosts();
         yield PostsLoadingSuccess(posts: posts);
       } catch (error) {
-        yield PostsLoadingError(error);
+        if (error is Exception) {
+          yield PostsLoadingError(error);
+        }
       }
     }
 
@@ -21,7 +23,9 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
         final posts = await ApiServices.getAllPosts();
         yield RefreshSuccess(posts: posts);
       } catch (error) {
-        yield PostsLoadingError(error);
+        if (error is Exception) {
+          yield PostsLoadingError(error);
+        }
       }
     }
   }

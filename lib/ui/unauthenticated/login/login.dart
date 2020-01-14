@@ -10,12 +10,20 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(I18n.of(context).appTitle(title: I18n.of(context).title, versionNumber: 1)),
+        title: Text(
+          I18n.of(context).appTitle(
+            title: I18n.of(context).title,
+            versionNumber: 1,
+          ),
+        ),
       ),
       body: SafeArea(
         child: BlocProvider(
-            builder: (BuildContext context) => LoginBloc(BlocProvider.of<AuthenticationBloc>(context)),
-            child: LoginScreen()),
+          builder: (BuildContext context) {
+            return LoginBloc(BlocProvider.of<AuthenticationBloc>(context));
+          },
+          child: LoginScreen(),
+        ),
       ),
     );
   }
@@ -25,8 +33,12 @@ class LoginScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  _login(BuildContext context) {
-    BlocProvider.of<LoginBloc>(context).dispatch(LogUserIn(emailController.text, passwordController.text));
+  void _login(BuildContext context) {
+    final LoginBloc loginBloc = BlocProvider.of<LoginBloc>(context);
+    loginBloc.dispatch(LogUserIn(
+      emailController.text,
+      passwordController.text,
+    ));
   }
 
   @override
@@ -38,7 +50,7 @@ class LoginScreen extends StatelessWidget {
         if (state is LoginLoading) {
           bottomWidget = CircularProgressIndicator();
         } else if (state is LoginError) {
-          bottomWidget = Text("Error");
+          bottomWidget = Text('Error');
         }
         return Center(
           child: Column(
@@ -57,7 +69,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               RaisedButton(
-                child: Text("OK"),
+                child: Text('OK'),
                 onPressed: () => _login(context),
               ),
               bottomWidget

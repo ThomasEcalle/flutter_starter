@@ -36,6 +36,7 @@ dev_dependencies:
     sdk: flutter
   flappy_translator: 1.0.3
   flutter_rename_app: 1.0.0
+  pedantic: 1.8.0+1
 
 flutter_rename_app:
   application_name: Your App Name here

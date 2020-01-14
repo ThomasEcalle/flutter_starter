@@ -8,6 +8,10 @@ class Post extends Equatable {
   Post(this.id, this.title, this.body) : super([id]);
 
   factory Post.fromJson(Map<String, dynamic> json) {
-    return Post(json["id"] ?? 0, json["title"] ?? "", json["body"] ?? "");
+    return Post(
+      json['id'] as int ?? 0,
+      json['title'] as String ?? '',
+      json['body'] as String ?? '',
+    );
   }
 }

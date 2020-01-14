@@ -27,7 +27,7 @@ class PostListItem extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         onTap: () {
-          if (this.onTap != null) {
+          if (onTap != null) {
             this.onTap();
           }
         },

@@ -12,8 +12,11 @@ import 'package:flutter_model/ui/shared/shared.dart';
 class PostsList extends StatelessWidget {
   final Completer<void> _refreshCompleter = Completer<void>();
 
-  _navigateToDetail(Post post, BuildContext context) {
-    Navigator.of(context).pushNamed(PostDetail.routeName, arguments: PostDetailArguments(post));
+  void _navigateToDetail(Post post, BuildContext context) {
+    Navigator.of(context).pushNamed(
+      PostDetail.routeName,
+      arguments: PostDetailArguments(post),
+    );
   }
 
   Widget _buildList(List<Post> posts, BuildContext context) {
@@ -60,12 +63,14 @@ class PostsList extends StatelessWidget {
               if (error is SocketException) {
                 return Center(
                   child: NoNetwork(
-                    onRetry: () => BlocProvider.of<PostsBloc>(context).dispatch(RetrievePosts()),
+                    onRetry: () => BlocProvider.of<PostsBloc>(context).dispatch(
+                      RetrievePosts(),
+                    ),
                   ),
                 );
               }
               return Center(
-                child: Text("Server error"),
+                child: Text('Server error'),
               );
             } else {
               return Container();

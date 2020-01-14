@@ -7,7 +7,7 @@ import 'package:flutter_model/core/models/post.dart';
 import '../../app_theme.dart';
 
 class PostDetail extends StatefulWidget {
-  static const String routeName = "/PostDetail";
+  static const String routeName = '/PostDetail';
   final Post post;
 
   const PostDetail({
@@ -23,22 +23,30 @@ class _PostDetailState extends State<PostDetail> {
   bool _isFavorite = false;
 
   @override
-  initState() {
+  void initState() {
     super.initState();
-    _isFavorite = BlocProvider.of<FavoritesBloc>(context).isPostInFavorites(widget.post);
+    final FavoritesBloc favoritesBloc = BlocProvider.of<FavoritesBloc>(context);
+    _isFavorite = favoritesBloc.isPostInFavorites(widget.post);
   }
 
-  _toggleFavorite() {
-    BlocProvider.of<FavoritesBloc>(context).dispatch(ToggleFavorite(widget.post));
+  void _toggleFavorite() {
+    final FavoritesBloc favoritesBloc = BlocProvider.of<FavoritesBloc>(context);
+    favoritesBloc.dispatch(ToggleFavorite(widget.post));
     setState(() {
-      this._isFavorite = !_isFavorite;
+      _isFavorite = !_isFavorite;
     });
   }
 
-  _buildFavoriteIcon(BuildContext context) {
+  IconButton _buildFavoriteIcon(BuildContext context) {
     return _isFavorite
-        ? IconButton(icon: Icon(Icons.favorite), onPressed: () => _toggleFavorite())
-        : IconButton(icon: Icon(Icons.favorite_border), onPressed: () => _toggleFavorite());
+        ? IconButton(
+            icon: Icon(Icons.favorite),
+            onPressed: _toggleFavorite,
+          )
+        : IconButton(
+            icon: Icon(Icons.favorite_border),
+            onPressed: _toggleFavorite,
+          );
   }
 
   @override

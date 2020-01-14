@@ -10,7 +10,7 @@ class _Colors {
 }
 
 class _Values {
-  get defaultBorderRadius => BorderRadius.circular(5.0);
+  BorderRadius get defaultBorderRadius => BorderRadius.circular(5.0);
 }
 
 class _Icons {}
@@ -66,6 +66,6 @@ class AppTheme extends InheritedWidget {
   bool updateShouldNotify(InheritedWidget oldWidget) => false;
 
   static AppTheme of(BuildContext context) {
-    return context.inheritFromWidgetOfExactType(AppTheme);
+    return context.inheritFromWidgetOfExactType(AppTheme) as AppTheme;
   }
 }

@@ -5,17 +5,19 @@ import 'package:flutter_model/core/models/post.dart';
 import 'package:http/http.dart' as http;
 
 class ApiServices {
-  static const BASE_URL = "https://jsonplaceholder.typicode.com";
+  static const baseUrl = 'https://jsonplaceholder.typicode.com';
 
   static Future<List<Post>> getAllPosts() async {
-    final response = await http.get("$BASE_URL/posts");
+    final response = await http.get('$baseUrl/posts');
     if (response.statusCode != 200) {
       throw ServerError();
     }
 
     final jsonBody = json.decode(response.body);
     final List<Post> posts = [];
-    posts.addAll((jsonBody as List).map((post) => Post.fromJson(post)).toList());
+    posts.addAll((jsonBody as List).map((post) {
+      return Post.fromJson(post as Map<String, dynamic>);
+    }).toList());
 
     return posts;
   }
@@ -37,6 +39,6 @@ class ApiServices {
 
   static Future<String> login(String userName, String password) async {
     await Future.delayed(Duration(seconds: 1));
-    return "token";
+    return 'token';
   }
 }

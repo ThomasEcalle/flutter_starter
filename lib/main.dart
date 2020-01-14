@@ -40,8 +40,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<FavoritesBloc>(builder: (BuildContext context) => FavoritesBloc()),
-        BlocProvider<AuthenticationBloc>(builder: (BuildContext context) => AuthenticationBloc()),
+        BlocProvider<FavoritesBloc>(
+          builder: (BuildContext context) => FavoritesBloc(),
+        ),
+        BlocProvider<AuthenticationBloc>(
+          builder: (BuildContext context) => AuthenticationBloc(),
+        ),
       ],
       child: AppTheme(
         child: MaterialApp(
