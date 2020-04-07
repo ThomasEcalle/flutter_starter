@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_model/core/blocs/posts/posts_bloc.dart';
-import 'package:flutter_model/core/blocs/posts/posts_event.dart';
-import 'package:flutter_model/core/translations/i18n.dart';
+import 'package:cleyade/core/blocs/posts/posts_bloc.dart';
+import 'package:cleyade/core/blocs/posts/posts_event.dart';
+import 'package:cleyade/core/translations/i18n.dart';
 
 import 'favorites/favorites.dart';
 import 'posts_list/posts_list.dart';

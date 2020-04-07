@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:flutter_model/core/models/navigation/exceptions/exceptions.dart';
-import 'package:flutter_model/core/models/post.dart';
+import 'package:cleyade/core/models/navigation/exceptions/exceptions.dart';
+import 'package:cleyade/core/models/post.dart';
 import 'package:http/http.dart' as http;
 
 class ApiServices {

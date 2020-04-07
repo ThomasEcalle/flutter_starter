@@ -1,4 +1,4 @@
-name: flutter_model
+name: cleyade
 description: A new Flutter application.
 
 # The following defines the version and build number for your application.
@@ -39,11 +39,11 @@ dev_dependencies:
   pedantic: 1.8.0+1
 
 flutter_rename_app:
-  application_name: Your App Name here
-  dart_package_name: my_app
-  application_id: com.android.myapp
-  bundle_id: com.ios.myapp
-  android_package_name: com.my.app
+  application_name: Cléyade
+  dart_package_name: cleyade
+  application_id: com.cleayade.android
+  bundle_id: com.cleyade.ios
+  android_package_name: com.cleayade.android
 
 
 # For information on the generic Dart part of this file, see the

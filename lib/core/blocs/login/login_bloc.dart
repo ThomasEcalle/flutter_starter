@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter_model/core/blocs/authentication/authentication_bloc.dart';
-import 'package:flutter_model/core/blocs/authentication/authentication_event.dart';
-import 'package:flutter_model/core/services/api_services.dart';
+import 'package:cleyade/core/blocs/authentication/authentication_bloc.dart';
+import 'package:cleyade/core/blocs/authentication/authentication_event.dart';
+import 'package:cleyade/core/services/api_services.dart';
 
 import './bloc.dart';
 
