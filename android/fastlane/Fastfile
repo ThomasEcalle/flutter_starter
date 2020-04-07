@@ -11,9 +11,8 @@ platform :android do
   def before_task; end
 
   def after_task
-    smartdistrib
     dispenser
-    #play_store(track: 'internal')
+    smartdistrib
   end
 
 end
