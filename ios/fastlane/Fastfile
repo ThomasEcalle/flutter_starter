@@ -16,6 +16,7 @@ platform :ios do
 
   def after_beta
     smartdistrib
+    dispenser
   end
 
   def before_ad_hoc; end
