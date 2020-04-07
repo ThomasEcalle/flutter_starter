@@ -5,6 +5,8 @@
 #
 ################################################################################
 
+fastlane_require 'rest-client'
+
 fastlane_version '2.80.0'
 
 ENV['ROOT_DIR'] = ENV['PWD']
@@ -121,7 +123,7 @@ platform :ios do
   # @!group iOS public lanes
   ##############################################################################
 
-  desc 'Archive and export a new Beta version (Smart&Soft inHouse) that can be deployed to SmartDistrib'
+  desc 'Archive and export a new Beta version (Smart&Soft inHouse) that can be deployed to Dispenser'
   lane :build_beta do |_|
     before_beta if defined? before_beta
     clear_derived_data
@@ -403,6 +405,46 @@ private_lane :smartdistrib do |_|
   ENV['SMARTDISTRIB_URL'] = 'http://www.smartdistrib.com/shared/' + ENV['FTP_DIRECTORY_NAME']
 end
 
+private_lane :dispenser do |_|
+  # Retrieve artifacts
+  files = Array.new
+  ipa = Actions.lane_context[SharedValues::IPA_OUTPUT_PATH]
+  files << ipa unless ipa.nil?
+  apk = Actions.lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+  files << apk unless apk.nil?
+  all_apk = Actions.lane_context[SharedValues::GRADLE_ALL_APK_OUTPUT_PATHS]
+  files += all_apk unless all_apk.nil?
+  apk_modules = Array.new
+  if android?
+    apk_modules = ENV['DISPENSER_APK_MODULES'].split(',') unless ENV['DISPENSER_APK_MODULES'].nil?
+  end
+
+  # Dispenser uploads
+  files.uniq
+      .select {|file|
+        apk_module = file.gsub("#{ENV['ROOT_DIR']}/", '').split('/').first
+        apk_modules.empty? || apk_modules.include?(apk_module)
+      }
+      .each {|file|
+        file_name = File.basename(file)
+        file_name.slice! File.extname(file_name)
+        RestClient::Request.execute(
+          :method => :post,
+          :verify_ssl => false,
+          :url => 'https://dispenser.cyllene.co/api/v1/artifact/upload',
+          :payload => {
+            :slug => file_name,
+            :artifact => File.new(file),
+            :projectSlug => ENV['DISPENSER_PROJECT'],
+          },
+          :headers => {
+            'X-Dispenser-Token' => ENV['DISPENSER_TOKEN']
+          }
+        )
+      }
+  ENV['DISPENSER_URL'] = 'http://dispenser.cyllene.co/projects/' + ENV['DISPENSER_PROJECT']
+end
+
 ################################################################################
 # @!group methods
 ################################################################################
@@ -439,8 +481,8 @@ def post_message(duration, success, exception)
     payload = Hash.new
     if success
       payload['Duration'] = "Smartlane just saved you #{duration} minutes! 🎉"
-      smartdistrib = ENV['SMARTDISTRIB_URL']
-      payload['SmartDistrib'] = smartdistrib unless smartdistrib.nil?
+      dispenser = ENV['DISPENSER_URL']
+      payload['Dispenser'] = dispenser unless dispenser.nil?
     else
       payload['Error'] = exception.message
     end
