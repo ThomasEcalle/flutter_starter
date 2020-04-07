@@ -21,6 +21,6 @@ class Router {
         }
         break;
     }
-    return MaterialPageRoute(builder: (BuildContext context) => route);
+    return MaterialPageRoute<dynamic>(builder: (BuildContext context) => route);
   }
 }

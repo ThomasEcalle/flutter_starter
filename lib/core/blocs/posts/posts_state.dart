@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_model/core/models/post.dart';
 
 abstract class PostsState extends Equatable {
-  PostsState([List props = const []]) : super(props);
+  PostsState([List<dynamic> props = const <dynamic>[]]) : super(props);
 }
 
 class PostsInitialState extends PostsState {

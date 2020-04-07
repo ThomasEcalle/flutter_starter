@@ -5,7 +5,7 @@ class Post extends Equatable {
   final String title;
   final String body;
 
-  Post(this.id, this.title, this.body) : super([id]);
+  Post(this.id, this.title, this.body) : super(<int>[id]);
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(

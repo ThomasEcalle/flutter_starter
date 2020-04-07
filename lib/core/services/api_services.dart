@@ -13,9 +13,10 @@ class ApiServices {
       throw ServerError();
     }
 
-    final jsonBody = json.decode(response.body);
+    final List jsonBody = json.decode(response.body) as List;
     final List<Post> posts = [];
-    posts.addAll((jsonBody as List).map((post) {
+
+    posts.addAll(jsonBody.map((dynamic post) {
       return Post.fromJson(post as Map<String, dynamic>);
     }).toList());
 
@@ -23,22 +24,22 @@ class ApiServices {
   }
 
   static Future<bool> hasToken() async {
-    await Future.delayed(Duration(seconds: 3));
+    await Future<void>.delayed(Duration(seconds: 3));
     return false;
   }
 
   static Future<bool> persistToken(String token) async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future<void>.delayed(Duration(seconds: 1));
     return false;
   }
 
   static Future<void> clearTokens() async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future<void>.delayed(Duration(seconds: 1));
     return;
   }
 
   static Future<String> login(String userName, String password) async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future<void>.delayed(Duration(seconds: 1));
     return 'token';
   }
 }
