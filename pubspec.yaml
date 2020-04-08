@@ -42,7 +42,7 @@ flutter_rename_app:
   application_name: Cléyade
   dart_package_name: cleyade
   application_id: com.cleayade.android
-  bundle_id: com.cleyade.ios
+  bundle_id: sns.com.cleyade
   android_package_name: com.cleayade.android
 
 
