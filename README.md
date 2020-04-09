@@ -134,7 +134,7 @@ In order to run the one environment you want, you will have to use the `-t` (for
 * ```flutter run -t lib/main_preprod.dart --flavor preprod```
 * ```flutter run -t lib/main_prod.dart --flavor prod```
 
-In order to `build` Apk , the arguments `-t` and `--flavor` are also needed:
+In order to `build` the Apk or IPA, the arguments `-t` and `--flavor` are also needed:
 
 * ```flutter build <apk or ios> -t lib/main_dev.dart --flavor dev```
 * ```flutter build <apk or ios> -t lib/main_preprod.dart --flavor preprod```
