@@ -50,6 +50,6 @@ In order to run the one environment you want, you will have to use the `-t` (for
 
 In order to `build` Apk or Ipa, the argument `-t` is also needed:
 
-* ```flutter build apk -t lib/main_dev.dart```
-* ```flutter build apk -t lib/main_preprod.dart```
-* ```flutter build apk -t lib/main_prod.dart```
+* ```flutter build <apk or ios> -t lib/main_dev.dart```
+* ```flutter build <apk or ios> -t lib/main_preprod.dart```
+* ```flutter build <apk or ios> -t lib/main_prod.dart```
