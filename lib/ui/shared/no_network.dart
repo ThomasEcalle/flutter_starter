@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cleyade/core/translations/i18n.dart';
+import 'package:flutter_model/core/translations/i18n.dart';
 
 class NoNetwork extends StatelessWidget {
   final VoidCallback onRetry;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:cleyade/core/blocs/authentication/bloc.dart';
-import 'package:cleyade/ui/authenticated/home.dart';
-import 'package:cleyade/ui/unauthenticated/login/login.dart';
-import 'package:cleyade/ui/splashscreen.dart';
+import 'package:flutter_model/core/blocs/authentication/bloc.dart';
+import 'package:flutter_model/ui/authenticated/home.dart';
+import 'package:flutter_model/ui/unauthenticated/login/login.dart';
+import 'package:flutter_model/ui/splashscreen.dart';
 
 class Authentication extends StatelessWidget {
   @override

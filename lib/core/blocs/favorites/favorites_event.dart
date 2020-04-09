@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:cleyade/core/models/post.dart';
+import 'package:flutter_model/core/models/post.dart';
 
 abstract class FavoritesEvents extends Equatable {}
 

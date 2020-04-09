@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:cleyade/core/blocs/favorites/favorites_bloc.dart';
-import 'package:cleyade/core/blocs/favorites/favorites_event.dart';
-import 'package:cleyade/core/models/post.dart';
+import 'package:flutter_model/core/blocs/favorites/favorites_bloc.dart';
+import 'package:flutter_model/core/blocs/favorites/favorites_event.dart';
+import 'package:flutter_model/core/models/post.dart';
 
 import '../../app_theme.dart';
 

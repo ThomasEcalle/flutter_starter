@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cleyade/core/models/post.dart';
+import 'package:flutter_model/core/models/post.dart';
 
 import '../app_theme.dart';
 

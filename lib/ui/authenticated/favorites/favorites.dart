@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:cleyade/core/blocs/favorites/bloc.dart';
-import 'package:cleyade/core/models/navigation/arguments/post_detail_arguments.dart';
-import 'package:cleyade/core/models/post.dart';
-import 'package:cleyade/ui/authenticated/post_detail/post_detail.dart';
-import 'package:cleyade/ui/shared/shared.dart';
+import 'package:flutter_model/core/blocs/favorites/bloc.dart';
+import 'package:flutter_model/core/models/navigation/arguments/post_detail_arguments.dart';
+import 'package:flutter_model/core/models/post.dart';
+import 'package:flutter_model/ui/authenticated/post_detail/post_detail.dart';
+import 'package:flutter_model/ui/shared/shared.dart';
 
 class Favorites extends StatelessWidget {
   void _navigateToDetail(Post post, BuildContext context) {

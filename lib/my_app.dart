@@ -1,8 +1,8 @@
-import 'package:cleyade/core/blocs/authentication/authentication_bloc.dart';
-import 'package:cleyade/core/blocs/favorites/bloc.dart';
-import 'package:cleyade/core/translations/i18n.dart';
-import 'package:cleyade/ui/authentication.dart';
-import 'package:cleyade/ui/router.dart';
+import 'package:flutter_model/core/blocs/authentication/authentication_bloc.dart';
+import 'package:flutter_model/core/blocs/favorites/bloc.dart';
+import 'package:flutter_model/core/translations/i18n.dart';
+import 'package:flutter_model/ui/authentication.dart';
+import 'package:flutter_model/ui/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

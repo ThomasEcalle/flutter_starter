@@ -1,4 +1,4 @@
-package com.cleayade.android
+package com.equinoa.flutter_model
 
 import android.os.Bundle
 

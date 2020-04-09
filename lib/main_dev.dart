@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:cleyade/app_config.dart';
-import 'package:cleyade/my_app.dart';
+import 'package:flutter_model/app_config.dart';
+import 'package:flutter_model/my_app.dart';
 import 'package:flutter/material.dart';
 
 class SimpleBlocDelegate extends BlocDelegate {

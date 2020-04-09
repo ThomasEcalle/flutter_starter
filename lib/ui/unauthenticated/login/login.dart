@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:cleyade/core/blocs/authentication/authentication_bloc.dart';
-import 'package:cleyade/core/blocs/login/bloc.dart';
-import 'package:cleyade/core/blocs/login/login_bloc.dart';
-import 'package:cleyade/core/translations/i18n.dart';
+import 'package:flutter_model/core/blocs/authentication/authentication_bloc.dart';
+import 'package:flutter_model/core/blocs/login/bloc.dart';
+import 'package:flutter_model/core/blocs/login/login_bloc.dart';
+import 'package:flutter_model/core/translations/i18n.dart';
 
 class Login extends StatelessWidget {
   @override
