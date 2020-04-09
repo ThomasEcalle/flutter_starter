@@ -1,4 +1,4 @@
-# flutter_model
+# flutter_starter
 
 A basic architecture for all the Flutter's projects.
 This architecture should be the initial code of every Flutter applications.
