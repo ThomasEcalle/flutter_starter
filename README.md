@@ -107,6 +107,8 @@ echo "Development plist copied"
 fi
 ```
 
+This new script should be placed between `Run Script` and `Compile Sources`, drag and drop it if necessary.
+
 > Explanations :
 > This code will, depending on the asked configuration, copy the right GoogleService-Info.plist from your directories and paste it in the Runner directory
 
