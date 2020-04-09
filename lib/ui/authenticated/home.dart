@@ -1,3 +1,4 @@
+import 'package:cleyade/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cleyade/core/blocs/posts/posts_bloc.dart';
@@ -28,7 +29,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text(
           I18n.of(context).appTitle(
-            title: I18n.of(context).title,
+            title: AppConfig.of(context).appName,
             versionNumber: 1,
           ),
         ),
