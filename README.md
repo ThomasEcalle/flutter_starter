@@ -38,13 +38,15 @@ Each of these main file has its specific AppConfig Inherited Widget in order to 
 Sometimes, when using `Firebase google-service.json` files for example, you will also need to add specific files for specific environments.
 That is where flavors and schemas ar used.
 
-#### Android
+#### Android - Firebase (and other)
 
-You will have to put the file in the appropriate directory under `android/app/src/` :
+You will have to put the file in the appropriate directory created under `android/app/src/` :
 
 * dev
 * preprod
 * prod
+
+> You have to create this directories yourself.
 
 Then, when running or building your app with the correct command line, the right file will be taken.
 
