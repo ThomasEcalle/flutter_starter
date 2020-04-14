@@ -28,10 +28,7 @@ class MyApp extends StatelessWidget {
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
           ],
-          supportedLocales: [
-            const Locale('en', ''),
-            const Locale('fr', ''),
-          ],
+          supportedLocales: I18nDelegate.supportedLocals,
           onGenerateRoute: Router.generateRoute,
           home: Authentication(),
         ),
