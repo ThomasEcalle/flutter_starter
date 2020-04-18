@@ -3,23 +3,11 @@ buildscript {
     repositories {
         google()
         jcenter()
-        // Smart&Soft maven repository
-        maven
-        {
-            credentials
-            {
-                username nexusUsername
-                password nexusPassword
-            }
-
-            url nexusRepositoryUrl
-        }
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.smartnsoft:smartlane-android:1.0.4'
     }
 }
 
@@ -27,17 +15,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        // Smart&Soft maven repository
-        maven
-        {
-            credentials
-            {
-                username nexusUsername
-                password nexusPassword
-            }
-
-            url nexusRepositoryUrl
-        }
     }
 }
 

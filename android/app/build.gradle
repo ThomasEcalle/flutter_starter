@@ -23,7 +23,6 @@ if (flutterVersionName == null) {
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.smartnsoft.smartlane'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
@@ -68,7 +67,7 @@ android {
             versionNameSuffix "-preprod"
         }
         prod {
-            dimension "app"
+            dimension "default"
         }
     }
 
