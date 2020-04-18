@@ -28,7 +28,7 @@ class PostListItem extends StatelessWidget {
         ),
         onTap: () {
           if (onTap != null) {
-            this.onTap();
+            onTap();
           }
         },
       ),

@@ -17,7 +17,7 @@ class NoNetwork extends StatelessWidget {
           child: Text(I18n.of(context).retry),
           onPressed: () {
             if (onRetry != null) {
-              this.onRetry();
+              onRetry();
             }
           },
         )

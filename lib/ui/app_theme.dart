@@ -66,6 +66,6 @@ class AppTheme extends InheritedWidget {
   bool updateShouldNotify(InheritedWidget oldWidget) => false;
 
   static AppTheme of(BuildContext context) {
-    return context.inheritFromWidgetOfExactType(AppTheme) as AppTheme;
+    return context.dependOnInheritedWidgetOfExactType(aspect: AppTheme);
   }
 }
